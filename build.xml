@@ -1,0 +1,72 @@
+<project name="Google Big Query Data Extractor" default="dist" basedir=".">
+    <description>
+        TopCoder Big Query Extractor and Loaders
+    </description>
+
+    <!-- set global properties for this build -->
+    <property name="src" location="src"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+    <property name="conf" location="conf"/>
+    <property name="schema" location="schema"/>
+    <property name="data" location="data"/>
+    <property name="lib" location="lib"/>
+    <property name="dist.jar" value="bigQueryExtractor.jar"/>
+    <property name="configurationFile" value="jobs.json"/>
+    <property name="loadUtility" value="com.topcoder.utilities.bigqueryload.BigQueryUtility"/>
+
+    <path id="build.classpath">
+        <fileset dir="lib" includes="**/*.jar"/>
+    </path>
+
+    <path id="runtime.classpath">
+        <path refid="build.classpath"/>
+        <pathelement path="conf"/>
+        <pathelement path="data"/>
+        <pathelement path="schema"/>
+        <pathelement path="build"/>
+    </path>
+
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="compile" depends="clean, init"
+            description="compile the source ">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <javac srcdir="${src}" destdir="${build}">
+            <classpath refid="build.classpath"/>
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile"
+            description="generate the distribution">
+
+        <!-- Create the distribution directory -->
+        <mkdir dir="${dist}/lib"/>
+
+        <!-- Put everything in ${build} into the {$projectName}-${DSTAMP}.jar file -->
+        <jar jarfile="${dist}/${dist.jar}" basedir="${build}"/>
+    </target>
+
+
+    <target name="clean"
+            description="clean up">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+
+    <target name="load" depends="dist" description="Run all the extract and load jobs defined in configuration file">
+        <java fork="true" maxmemory="512m" failonerror="true" classname="${loadUtility}">
+            <arg value="${configurationFile}"/>
+            <classpath>
+                <path refid="runtime.classpath"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>

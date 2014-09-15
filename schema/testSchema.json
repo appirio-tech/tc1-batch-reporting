@@ -1,0 +1,25 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+        },
+        {
+            "name": "card",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING"
+                }
+            ]
+
+        }
+    ]
+}

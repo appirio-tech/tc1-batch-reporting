@@ -1,0 +1,25 @@
+{
+    "logFilePerRunning":true,
+    "jobs":[
+        {
+            "bigQueryProjectId":"tc-data-accessibility-30044673",
+            "bigQueryDatasetId":"veveDataset",
+            "bigQueryTableId":"user",
+            "tableSchemaFile":"userSchema.json",
+            "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.UserDataExtractor",
+            "dataFileName":"user_data.json",
+            "rowNumberPerQuery":100,
+            "extractFileNameWithDate":true
+        },
+        {
+            "bigQueryProjectId":"tc-data-accessibility-30044673",
+            "bigQueryDatasetId":"veveDataset",
+            "bigQueryTableId":"challenge",
+            "tableSchemaFile":"challengeSchema.json",
+            "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.ChallengeDataExtractor",
+            "dataFileName":"challenge_data.json",
+            "rowNumberPerQuery":100,
+            "extractFileNameWithDate":true
+        }
+    ]
+}

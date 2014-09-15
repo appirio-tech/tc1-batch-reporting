@@ -1,0 +1,187 @@
+{
+    "fields": [
+        {
+            "name": "challenge_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+        },
+        {
+            "name": "challenge_name",
+            "type": "STRING"
+        },
+        {
+            "name": "challenge_platform_name",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "mode": "REQUIRED"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING"
+                }
+            ]
+
+        },
+        {
+            "name": "challenge_technology_name",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "mode": "REQUIRED"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING"
+                }
+            ]
+
+        },
+        {
+            "name": "num_registrations",
+            "type": "INTEGER"
+        },
+        {
+            "name": "num_submissions",
+            "type": "INTEGER"
+        },
+        {
+            "name": "num_valid_submissions",
+            "type": "INTEGER"
+        },
+        {
+            "name": "avg_raw_score",
+            "type": "FLOAT"
+        },
+        {
+            "name": "avg_final_score",
+            "type": "FLOAT"
+        },
+        {
+            "name": "phase_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "phase_desc",
+            "type": "STRING"
+        },
+        {
+            "name": "category_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "category_desc",
+            "type": "STRING"
+        },
+        {
+            "name": "posting_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "submitby_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "complete_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "status_desc",
+            "type": "STRING"
+        },
+        {
+            "name": "rating_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "viewable_category_ind",
+            "type": "INTEGER"
+        },
+        {
+            "name": "num_submissions_passed_review",
+            "type": "INTEGER"
+        },
+        {
+            "name": "winner_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "digital_run_ind",
+            "type": "INTEGER"
+        },
+        {
+            "name": "challenge_category_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "challenge_category_name",
+            "type": "STRING"
+        },
+        {
+            "name": "challenge_prizes_total",
+            "type": "FLOAT"
+        },
+        {
+            "name": "duration",
+            "type": "FLOAT"
+        },
+        {
+            "name": "fulfillment",
+            "type": "FLOAT"
+        },
+        {
+            "name": "last_modification_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "first_place_prize",
+            "type": "FLOAT"
+        },
+        {
+            "name": "num_checkpoint_submissions",
+            "type": "INTEGER"
+        },
+        {
+            "name": "num_valid_checkpoint_submissions",
+            "type": "INTEGER"
+        },
+        {
+            "name": "project_name",
+            "type": "STRING"
+        },
+        {
+            "name": "project_status",
+            "type": "STRING"
+        },
+        {
+            "name": "project_create_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "billing_account_name",
+            "type": "STRING"
+        },
+        {
+            "name": "client_name",
+            "type": "STRING"
+        },
+        {
+            "name": "cmc_account_id",
+            "type": "STRING"
+        },
+        {
+            "name": "customer_number",
+            "type": "STRING"
+        },
+        {
+            "name": "subscription_number",
+            "type": "STRING"
+        }
+    ]
+}
