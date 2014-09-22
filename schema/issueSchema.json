@@ -1,0 +1,82 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+        },
+        {
+            "name": "ticket_id",
+            "type": "STRING",
+            "mode": "REQUIRED"
+        },
+        {
+            "name": "reporter",
+            "type": "STRING"
+        },
+        {
+            "name": "assignee",
+            "type": "STRING"
+        },
+        {
+            "name": "summary",
+            "type": "STRING"
+        },
+        {
+            "name": "description",
+            "type": "STRING"
+        },
+        {
+            "name": "created_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "updated_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "due_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "resolution_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "votes",
+            "type": "INTEGER"
+        },
+        {
+            "name": "winner",
+            "type": "STRING"
+        },
+        {
+            "name": "payment",
+            "type": "FLOAT"
+        },
+        {
+            "name": "challenge_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "status",
+            "type": "STRING"
+        },
+        {
+            "name": "tco_points",
+            "type": "INTEGER"
+        },
+        {
+            "name": "project_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "source_name",
+            "type": "STRING"
+        },
+        {
+            "name": "source",
+            "type": "STRING"
+        }
+    ]
+}
