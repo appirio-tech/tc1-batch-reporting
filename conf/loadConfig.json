@@ -19,7 +19,17 @@
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.ChallengeDataExtractor",
             "dataFileName":"challenge_data.json",
             "rowNumberPerQuery":100,
-            "extractFileNameWithDate":false
+            "extractFileNameWithDate":true
+        },
+        {
+            "bigQueryProjectId":"tc-data-accessibility-30044673",
+            "bigQueryDatasetId":"veveDataset",
+            "bigQueryTableId":"issue",
+            "tableSchemaFile":"issueSchema.json",
+            "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.JiraIssueDataExtractor",
+            "dataFileName":"issue_data.json",
+            "rowNumberPerQuery":100,
+            "extractFileNameWithDate":true
         }
     ]
 }

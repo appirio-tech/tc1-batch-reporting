@@ -26,8 +26,15 @@ import java.util.zip.GZIPOutputStream;
  * The abstract class acts as the base for all the TopCoder Big Query Extractors.
  * </p>
  *
- * @author GreatKevin
- * @version 1.0
+ * <p>
+ * Version 1.1 (TopCoder Big Query Data Extractor - Jira Issue Data)
+ * <ul>
+ *     <li>Updated ResultSetMapper class to support blob data type</li>
+ * </ul>
+ * </p>
+ *
+ * @author GreatKevin, Veve
+ * @version 1.1
  */
 public abstract class BaseTopCoderBigQueryExtractor implements TopCoderBigQueryExtractor {
 
@@ -292,8 +299,17 @@ public abstract class BaseTopCoderBigQueryExtractor implements TopCoderBigQueryE
                             // getting the SQL column name
                             String columnName = rsmd
                                     .getColumnName(_iterator + 1);
+
+                            String columnTypeName =  rsmd
+                                    .getColumnTypeName(_iterator + 1);
+
                             // reading the value of the SQL column
                             Object columnValue = rs.getObject(_iterator + 1);
+
+                            if (columnTypeName.equalsIgnoreCase("text") && columnValue != null) {
+                                columnValue = new String((byte[]) columnValue);
+                            }
+
                             // iterating over outputClass attributes matching 'name' value
                             for (Field field : fields) {
 
