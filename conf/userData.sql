@@ -68,6 +68,10 @@ image,
 (SELECT SUM(up.total_amount) FROM user_payment up, payment p WHERE up.user_id = c.coder_id AND up.payment_id = p.payment_id AND p.payment_type_id IN (7, 26, 27, 28, 36, 38, 48) ) as total_review_earnings,
 (SELECT SUM(up.total_amount) FROM user_payment up, payment p WHERE up.user_id = c.coder_id AND up.payment_id = p.payment_id AND p.payment_type_id IN (19, 22, 32, 33, 34) ) as total_tournament_earnings,
 (SELECT SUM(up.total_amount) FROM user_payment up, payment p WHERE up.user_id = c.coder_id AND up.payment_id = p.payment_id AND p.payment_type_id IN (17, 18, 25, 40, 41, 63, 62) ) as total_dr_earnings,
-(SELECT SUM(up.total_amount) FROM user_payment up, payment p WHERE up.user_id = c.coder_id AND up.payment_id = p.payment_id AND p.payment_type_id IN (45, 69) ) as total_copilot_earnings
-
+(SELECT SUM(up.total_amount) FROM user_payment up, payment p WHERE up.user_id = c.coder_id AND up.payment_id = p.payment_id AND p.payment_type_id IN (45, 69) ) as total_copilot_earnings,
+reg_source,
+utm_source,
+utm_medium,
+utm_campaign,
+create_date
 FROM coder c ORDER BY coder_id

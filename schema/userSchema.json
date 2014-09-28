@@ -224,6 +224,26 @@
         {
             "name": "total_copilot_earnings",
             "type": "FLOAT"
+        },
+        {
+            "name": "reg_source",
+            "type": "STRING"
+        },
+        {
+            "name": "utm_source",
+            "type": "STRING"
+        },
+        {
+            "name": "utm_medium",
+            "type": "STRING"
+        },
+        {
+            "name": "utm_campaign",
+            "type": "STRING"
+        },
+        {
+            "name": "create_date",
+            "type": "TIMESTAMP"
         }
     ]
 }
