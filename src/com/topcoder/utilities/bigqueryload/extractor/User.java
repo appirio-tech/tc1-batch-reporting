@@ -10,8 +10,22 @@ import java.util.Date;
  *     The user java bean to store the extracted user data.
  * </p>
  *
- * @author GreatKevin
- * @version 1.0
+ * <p>
+ * Version 1.1 (TopCoder - Update DW loading of Coder and Update Big Query User Extractor)
+ * @author Veve
+ * @challenge 30045984
+ * <ul>
+ *  Add columns
+ *      - reg_source
+ *      - utm_source
+ *      - utm_medium
+ *      - utm_campaign
+ *      - create_date
+ * </ul>
+ * </p>
+ *
+ * @author GreatKevin, Veve
+ * @version 1.1
  */
 public class User  {
     private Long user_id;
@@ -70,6 +84,12 @@ public class User  {
     private Double total_tournament_earnings;
     private Double total_dr_earnings;
     private Double total_copilot_earnings;
+    private String reg_source;
+    private String utm_source;
+    private String utm_medium;
+    private String utm_campaign;
+    private Date create_date;
+
 
     public Long getUser_id() {
         return user_id;
@@ -517,5 +537,45 @@ public class User  {
 
     public void setTotal_copilot_earnings(Double total_copilot_earnings) {
         this.total_copilot_earnings = total_copilot_earnings;
+    }
+
+    public String getReg_source() {
+        return reg_source;
+    }
+
+    public void setReg_source(String reg_source) {
+        this.reg_source = reg_source;
+    }
+
+    public String getUtm_source() {
+        return utm_source;
+    }
+
+    public void setUtm_source(String utm_source) {
+        this.utm_source = utm_source;
+    }
+
+    public String getUtm_medium() {
+        return utm_medium;
+    }
+
+    public void setUtm_medium(String utm_medium) {
+        this.utm_medium = utm_medium;
+    }
+
+    public String getUtm_campaign() {
+        return utm_campaign;
+    }
+
+    public void setUtm_campaign(String utm_campaign) {
+        this.utm_campaign = utm_campaign;
+    }
+
+    public Date getCreate_date() {
+        return create_date;
+    }
+
+    public void setCreate_date(Date create_date) {
+        this.create_date = create_date;
     }
 }
