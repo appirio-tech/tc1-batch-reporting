@@ -3,7 +3,7 @@
     "jobs":[
         {
             "bigQueryProjectId":"tc-data-accessibility-30044673",
-            "bigQueryDatasetId":"veveDataset",
+            "bigQueryDatasetId":"demoDataset",
             "bigQueryTableId":"user",
             "tableSchemaFile":"userSchema.json",
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.UserDataExtractor",
@@ -13,7 +13,7 @@
         },
         {
             "bigQueryProjectId":"tc-data-accessibility-30044673",
-            "bigQueryDatasetId":"veveDataset",
+            "bigQueryDatasetId":"demoDataset",
             "bigQueryTableId":"challenge",
             "tableSchemaFile":"challengeSchema.json",
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.ChallengeDataExtractor",
@@ -23,12 +23,22 @@
         },
         {
             "bigQueryProjectId":"tc-data-accessibility-30044673",
-            "bigQueryDatasetId":"veveDataset",
+            "bigQueryDatasetId":"demoDataset",
             "bigQueryTableId":"issue",
             "tableSchemaFile":"issueSchema.json",
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.JiraIssueDataExtractor",
             "dataFileName":"issue_data.json",
             "rowNumberPerQuery":100,
+            "extractFileNameWithDate":true
+        },
+        {
+            "bigQueryProjectId":"tc-data-accessibility-30044673",
+            "bigQueryDatasetId":"demoDataset",
+            "bigQueryTableId":"user_notification",
+            "tableSchemaFile":"userNotificationSchema.json",
+            "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.UserNotificationBigQueryExtractor",
+            "dataFileName":"user_notification_data.json",
+            "rowNumberPerQuery":100000000,
             "extractFileNameWithDate":true
         }
     ]
