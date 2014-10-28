@@ -67,7 +67,23 @@
         },
         {
             "name": "image",
-            "type": "BOOLEAN"
+            "type": "INTEGER"
+        },
+        {
+            "name": "home_phone",
+            "type": "STRING"
+        },
+        {
+            "name": "work_phone",
+            "type": "STRING"
+        },
+        {
+            "name": "modify_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "handle_lower",
+            "type": "STRING"
         },
         {
             "name": "competition_country_name",

@@ -44,7 +44,11 @@ public class User  {
     private String email;
     private String status;
     private Date last_login;
-    private Boolean image;
+    private Long image;
+    private String home_phone;
+    private String work_phone;
+    private Date modify_date;
+    private String handle_lower;
     private String competition_country_name;
     private Long srm_rating;
     private Long srm_num_contests;
@@ -219,11 +223,11 @@ public class User  {
         this.last_login = last_login;
     }
 
-    public Boolean getImage() {
+    public Long getImage() {
         return image;
     }
 
-    public void setImage(Boolean image) {
+    public void setImage(Long image) {
         this.image = image;
     }
 
@@ -537,6 +541,38 @@ public class User  {
 
     public void setTotal_copilot_earnings(Double total_copilot_earnings) {
         this.total_copilot_earnings = total_copilot_earnings;
+    }
+
+    public String getHome_phone() {
+        return home_phone;
+    }
+
+    public void setHome_phone(String home_phone) {
+        this.home_phone = home_phone;
+    }
+
+    public String getWork_phone() {
+        return work_phone;
+    }
+
+    public void setWork_phone(String work_phone) {
+        this.work_phone = work_phone;
+    }
+
+    public Date getModify_date() {
+        return modify_date;
+    }
+
+    public void setModify_date(Date modify_date) {
+        this.modify_date = modify_date;
+    }
+
+    public String getHandle_lower() {
+        return handle_lower;
+    }
+
+    public void setHandle_lower(String handle_lower) {
+        this.handle_lower = handle_lower;
     }
 
     public String getReg_source() {
