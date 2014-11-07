@@ -2,8 +2,8 @@
     "logFilePerRunning":true,
     "jobs":[
         {
-            "bigQueryProjectId":"tc-data-accessibility-30044673",
-            "bigQueryDatasetId":"veveDataset",
+            "bigQueryProjectId":"@loadConfig-big-query-project-id@",
+            "bigQueryDatasetId":"@loadConfig-big-query-dataset-id@",
             "bigQueryTableId":"user",
             "tableSchemaFile":"userSchema.json",
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.UserDataExtractor",
@@ -12,8 +12,8 @@
             "extractFileNameWithDate":true
         },
         {
-            "bigQueryProjectId":"tc-data-accessibility-30044673",
-            "bigQueryDatasetId":"veveDataset",
+            "bigQueryProjectId":"@loadConfig-big-query-project-id@",
+            "bigQueryDatasetId":"@loadConfig-big-query-dataset-id@",
             "bigQueryTableId":"challenge",
             "tableSchemaFile":"challengeSchema.json",
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.ChallengeDataExtractor",
@@ -22,8 +22,8 @@
             "extractFileNameWithDate":true
         },
         {
-            "bigQueryProjectId":"tc-data-accessibility-30044673",
-            "bigQueryDatasetId":"veveDataset",
+            "bigQueryProjectId":"@loadConfig-big-query-project-id@",
+            "bigQueryDatasetId":"@loadConfig-big-query-dataset-id@",
             "bigQueryTableId":"issue",
             "tableSchemaFile":"issueSchema.json",
             "extractorClassName":"com.topcoder.utilities.bigqueryload.extractor.JiraIssueDataExtractor",

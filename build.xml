@@ -21,7 +21,7 @@
 
     <path id="runtime.classpath">
         <path refid="build.classpath"/>
-        <pathelement path="conf"/>
+        <pathelement path="${dist}/conf"/>
         <pathelement path="data"/>
         <pathelement path="schema"/>
         <pathelement path="build"/>
@@ -50,6 +50,15 @@
 
         <!-- Put everything in ${build} into the {$projectName}-${DSTAMP}.jar file -->
         <jar jarfile="${dist}/${dist.jar}" basedir="${build}"/>
+
+        <mkdir dir="${dist}/conf"/>
+
+        <copy todir="${dist}/conf" overwrite="yes">
+          <fileset dir="${conf}">
+            <include name="**/*.*" />
+          </fileset>
+          <filterset filtersfile="token.properties" />
+        </copy>
     </target>
 
 
