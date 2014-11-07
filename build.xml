@@ -53,11 +53,18 @@
 
         <mkdir dir="${dist}/conf"/>
 
+        <!-- Don't filter credential file. It breaks data. -->
         <copy todir="${dist}/conf" overwrite="yes">
           <fileset dir="${conf}">
             <include name="**/*.*" />
+            <exclude name="*.p12"/>
           </fileset>
           <filterset filtersfile="token.properties" />
+        </copy>
+        <copy todir="${dist}/conf" overwrite="yes">
+          <fileset dir="${conf}">
+            <include name="*.p12"/>
+          </fileset>
         </copy>
     </target>
 
