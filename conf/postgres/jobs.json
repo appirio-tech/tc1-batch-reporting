@@ -1,0 +1,19 @@
+{
+    "logFilePerRunning":true,
+    "jobs":[
+        {
+            "extractorClassName":"com.topcoder.utilities.reporting.extractor.UserDataExtractor",
+            "dataFileName":"user_data.json",
+            "rowNumberPerQuery":100,
+            "extractFileNameWithDate":true,
+            "loaderConfig": {
+                "tableName":    "user",
+                "setupScript":  "postgres/script/user/setup.sql",
+                "clearScript":  "postgres/script/user/clear.sql",
+                "insertScript": "postgres/script/user/insert.sql",
+                "schema":       "postgres/schema/userSchema.json"
+
+            }
+        }
+    ]
+}

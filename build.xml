@@ -11,9 +11,11 @@
     <property name="schema" location="schema"/>
     <property name="data" location="data"/>
     <property name="lib" location="lib"/>
-    <property name="dist.jar" value="bigQueryExtractor.jar"/>
-    <property name="configurationFile" value="jobs.json"/>
-    <property name="loadUtility" value="com.topcoder.utilities.bigqueryload.BigQueryUtility"/>
+    <property name="dist.jar" value="reportingTool.jar"/>
+    <property name="bigQueryJobs" value="bigquery/jobs.json"/>
+    <property name="bigQueryRunner" value="com.topcoder.utilities.reporting.bigquery.JobRunner"/>
+    <property name="postgresJobs" value="postgres/jobs.json"/>
+    <property name="postgresRunner" value="com.topcoder.utilities.reporting.postgres.JobRunner"/>
 
     <path id="build.classpath">
         <fileset dir="lib" includes="**/*.jar"/>
@@ -21,7 +23,7 @@
 
     <path id="runtime.classpath">
         <path refid="build.classpath"/>
-        <pathelement path="conf"/>
+        <pathelement path="${dist}/conf"/>
         <pathelement path="data"/>
         <pathelement path="schema"/>
         <pathelement path="build"/>
@@ -37,7 +39,7 @@
     <target name="compile" depends="clean, init"
             description="compile the source ">
         <!-- Compile the java code from ${src} into ${build} -->
-        <javac srcdir="${src}" destdir="${build}">
+        <javac srcdir="${src}" destdir="${build}" debug="on">
             <classpath refid="build.classpath"/>
         </javac>
     </target>
@@ -50,6 +52,20 @@
 
         <!-- Put everything in ${build} into the {$projectName}-${DSTAMP}.jar file -->
         <jar jarfile="${dist}/${dist.jar}" basedir="${build}"/>
+
+        <!-- Don't filter credential file. It breaks data. -->
+        <copy todir="${dist}/conf" overwrite="yes">
+            <fileset dir="${conf}">
+                <include name="**/*.*" />
+                <exclude name="**/*.p12"/>
+            </fileset>
+            <filterset filtersfile="token.properties" />
+        </copy>
+        <copy todir="${dist}/conf" overwrite="yes">
+            <fileset dir="${conf}">
+                <include name="**/*.p12"/>
+            </fileset>
+        </copy>
     </target>
 
 
@@ -60,9 +76,18 @@
         <delete dir="${dist}"/>
     </target>
 
-    <target name="load" depends="dist" description="Run all the extract and load jobs defined in configuration file">
-        <java fork="true" maxmemory="512m" failonerror="true" classname="${loadUtility}">
-            <arg value="${configurationFile}"/>
+    <target name="loadBigQuery" depends="dist" description="Run all the extract and load jobs defined in configuration file for Google Big Query">
+        <java fork="true" maxmemory="512m" failonerror="true" classname="${bigQueryRunner}">
+            <arg value="${bigQueryJobs}"/>
+            <classpath>
+                <path refid="runtime.classpath"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="loadPostgres" depends="dist" description="Run all the extract and load jobs defined in configuration file for Postgres">
+        <java fork="true" maxmemory="512m" failonerror="true" classname="${postgresRunner}">
+            <arg value="${postgresJobs}"/>
             <classpath>
                 <path refid="runtime.classpath"/>
             </classpath>

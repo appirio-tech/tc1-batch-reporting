@@ -1,0 +1,264 @@
+{
+    "schema": [
+        {
+            "name": "user_id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "first_name",
+            "type": "STRING"
+        },
+        {
+            "name": "middle_name",
+            "type": "STRING"
+        },
+        {
+            "name": "last_name",
+            "type": "STRING"
+        },
+        {
+            "name": "state_name",
+            "type": "STRING"
+        },
+        {
+            "name": "country_name",
+            "type": "STRING"
+        },
+        {
+            "name": "address1",
+            "type": "STRING"
+        },
+        {
+            "name": "address2",
+            "type": "STRING"
+        },
+        {
+            "name": "city",
+            "type": "STRING"
+        },
+        {
+            "name": "zip",
+            "type": "STRING"
+        },
+        {
+            "name": "activation_code",
+            "type": "STRING"
+        },
+        {
+            "name": "member_since",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "handle",
+            "type": "STRING"
+        },
+        {
+            "name": "email",
+            "type": "STRING"
+        },
+        {
+            "name": "status",
+            "type": "STRING"
+        },
+        {
+            "name": "last_login",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "image",
+            "type": "INTEGER"
+        },
+        {
+            "name": "home_phone",
+            "type": "STRING"
+        },
+        {
+            "name": "work_phone",
+            "type": "STRING"
+        },
+        {
+            "name": "modify_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "handle_lower",
+            "type": "STRING"
+        },
+        {
+            "name": "competition_country_name",
+            "type": "STRING"
+        },
+        {
+            "name": "srm_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "srm_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "mm_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "mm_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "srm_last_competition_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "mm_last_competition_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "conceptualization_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "conceptualization_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "specification_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "specification_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "architecture_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "architecture_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "component_design_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "component_design_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "component_development_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "component_development_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "assembly_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "assembly_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "code_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "code_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "F2F_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "F2F_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "test_scenario_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "test_scenario_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "test_script_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "test_script_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "ui_prototype_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "ui_prototype_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "ria_build_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "ria_build_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "content_rating",
+            "type": "INTEGER"
+        },
+        {
+            "name": "content_num_contests",
+            "type": "INTEGER"
+        },
+        {
+            "name": "total_earnings",
+            "type": "FLOAT"
+        },
+        {
+            "name": "total_prizes",
+            "type": "FLOAT"
+        },
+        {
+            "name": "total_review_earnings",
+            "type": "FLOAT"
+        },
+        {
+            "name": "total_tournament_earnings",
+            "type": "FLOAT"
+        },
+        {
+            "name": "total_dr_earnings",
+            "type": "FLOAT"
+        },
+        {
+            "name": "total_copilot_earnings",
+            "type": "FLOAT"
+        },
+        {
+            "name": "reg_source",
+            "type": "STRING"
+        },
+        {
+            "name": "utm_source",
+            "type": "STRING"
+        },
+        {
+            "name": "utm_medium",
+            "type": "STRING"
+        },
+        {
+            "name": "utm_campaign",
+            "type": "STRING"
+        },
+        {
+            "name": "create_date",
+            "type": "TIMESTAMP"
+        }
+    ]
+}
